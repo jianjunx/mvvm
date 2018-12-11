@@ -52,7 +52,8 @@ class Compile extends CompileDirective {
 	moustache(node) {
 		const text = node.textContent;
 		if (!text) return;
-        const reg = /\{\{((?:.|\n)+?)\}\}/g;
+		const reg = /\{\{((?:.|\n)+?)\}\}/g;
+		// 正则匹配到{{}} 去到里面的值进行替换
 		node.textContent = replaceMoustache(text, reg, this.vm, expr => {
             // 创建Watcher实例 数据发生变化进行实时更新
 			new Watcher(this.vm, expr, value => {
