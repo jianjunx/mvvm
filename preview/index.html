@@ -10,8 +10,11 @@
     <div id="app">
         <p>{{name}}就是{{name}}</p>
         <p v-text="name"></p>
-        <div v-html="vhtml" data-a="1"></div>
         <input type="text" v-model="name">
+        <p :class="hello">{{msg}}</p>
+        <div v-html="vhtml"></div>
+        <button @click="sayHi">点击事件</button>
+        <p>计算属性：{{cmp}}</p>
     </div>
 </body>
 <script src="../dist/mvvm.js"></script>
